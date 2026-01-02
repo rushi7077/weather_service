@@ -8,6 +8,7 @@ import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -38,5 +39,8 @@ public class WeatherService {
     public void deleteWeather(String city) {
         System.out.println("Removing weather data for city: " + city);
         weatherRepository.deleteByCity(city);
+    }
+    public List<Weather> getAllWeather(){
+        return weatherRepository.findAll();
     }
 }

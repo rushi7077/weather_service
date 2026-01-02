@@ -34,7 +34,7 @@ public class WeatherController {
 
     @GetMapping("/all")
     public List<Weather> getAllWeather(){
-        return weatherRepository.findAll();
+        return weatherService.getAllWeather();
     }
 
     @GetMapping("/cacheData")

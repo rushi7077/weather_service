@@ -13,13 +13,6 @@ public class Weather {
     private String city;
     private String forecast;
 
-    public Weather(){}
-
-    public Weather(String city, String forecast){
-        this.city=city;
-        this.forecast=forecast;
-    }
-
     public Long getId() {
         return id;
     }

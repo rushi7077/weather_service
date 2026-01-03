@@ -51,8 +51,9 @@ public class WeatherController {
         weatherService.deleteWeather(city);
         return "Weather data for " + city + " has been deleted and cache evicted.";
     }
-    @GetMapping("/health")
+    @GetMapping("/Bio")
     public String getHealth() {
-        return "Healthy";
+        return "My name is Rushikesh Rajendra Baravkar." +
+                "I am a curious learner exploring Java, Spring Boot, Redis, and backend development";
     }
 }

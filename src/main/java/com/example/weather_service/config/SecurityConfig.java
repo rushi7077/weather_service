@@ -14,6 +14,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+import static io.lettuce.core.models.command.CommandDetail.Flag.ADMIN;
+
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
@@ -27,6 +29,7 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable()) // disable CSRF for JSON login
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/authenticate").permitAll()
+                        .requestMatchers("/weather/Bio").hasRole("ADMIN")
                         .anyRequest().authenticated()
 
                 );

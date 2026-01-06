@@ -1,15 +1,19 @@
+# Project name
 spring.application.name=weather-service
+
+# H2 Database (in-memory, safe for examples)
 spring.datasource.url=jdbc:h2:mem:appdb
 spring.datasource.driverClassName=org.h2.Driver
 spring.datasource.username=sa
 spring.datasource.password=password
 spring.h2.console.enabled=true
 
+# Redis cache (example config)
 spring.cache.type=redis
 spring.data.redis.host=localhost
 spring.data.redis.port=6379
 spring.cache.cache-names=weather
 
-# JWT configuration
+# JWT configuration (use your own secret in real setup)
 jwt.expiration_time=3600000           # 1 hour in milliseconds
-jwt.secret=this-is-my-super-secret-key-54789369738464
+jwt.secret=YOUR_JWT_SECRET            # replace with your own secret
